@@ -12,32 +12,24 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class ClearArmor extends JavaPlugin
 {
 	String bad = ChatColor.GOLD + "[ClearArmor] " + ChatColor.RED;
-	
+
 	@SuppressWarnings("deprecation")
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) 
 	{
-		if(sender instanceof Player)
-		{
-			if(sender.hasPermission("cleararmor.use"))
+		if(command.getName().equalsIgnoreCase("cleararmor")){
+			if(sender.hasPermission("cleararmor.use") && args.length != 1)
 			{
-				sender.sendMessage(bad + "You do not have permission to use this command.");
+				Player player = getServer().getPlayer(args[0]);
+
+				if(player != null)
+				{
+					player.getInventory().setArmorContents(new ItemStack[4]); // setting null is a terrible idea
+					player.updateInventory(); // force inventory update to client
+				}			
+				sender.sendMessage(bad + "Cleared the armor inventory of " + player.getDisplayName());
 				return true;
 			}
 		}
-		
-		if(args.length != 1)
-		{
-			sender.sendMessage(bad + "Syntax: /cleararmor [Player]");
-			return true;
-		}
-		
-		Player player = getServer().getPlayer(args[0]);
-		
-		if(player != null)
-		{
-			player.getInventory().setArmorContents(new ItemStack[4]); // setting null is a terrible idea
-			player.updateInventory(); // force inventory update to client
-		}
-		return true;
+		return false;
 	}
 }
