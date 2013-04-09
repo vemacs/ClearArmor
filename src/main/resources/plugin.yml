@@ -9,3 +9,7 @@ commands:
   cleararmor:
     description: 'Removes armor via a console command.'
     usage: 'Usage: /cleararmor <player>'
+permissions:
+   cleararmor.use:
+    description: 'Allows you to clear the armor of another player.'
+    default: op

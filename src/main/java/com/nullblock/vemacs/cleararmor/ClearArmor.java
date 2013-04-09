@@ -18,7 +18,7 @@ public class ClearArmor extends JavaPlugin
 	{
 		if(sender instanceof Player)
 		{
-			if(sender.hasPermission("ClearArmor.use"))
+			if(sender.hasPermission("cleararmor.use"))
 			{
 				sender.sendMessage(bad + "You do not have permission to use this command.");
 				return true;
