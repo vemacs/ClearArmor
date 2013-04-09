@@ -5,3 +5,7 @@ main: com.nullblock.vemacs.cleararmor.ClearArmor
 name: ClearArmor
 url: http://github.com/vemacs/ClearArmor
 version: '1.0'
+commands:
+  cleararmor:
+    description: 'Removes armor via a console command.'
+    usage: 'Usage: /cleararmor <player>'
