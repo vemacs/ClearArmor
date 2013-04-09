@@ -1,0 +1,7 @@
+author: vemacs
+database: false
+description: 'Clears the specified players'' armor inventory '
+main: com.nullblock.vemacs.cleararmor.ClearArmor
+name: ClearArmor
+url: http://github.com/vemacs/ClearArmor
+version: '1.0'
