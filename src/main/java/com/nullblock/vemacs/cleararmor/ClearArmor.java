@@ -17,7 +17,7 @@ public class ClearArmor extends JavaPlugin
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) 
 	{
 		if(command.getName().equalsIgnoreCase("cleararmor")){
-			if(sender.hasPermission("cleararmor.use") && args.length != 1)
+			if(sender.hasPermission("cleararmor.use") && args.length == 1)
 			{
 				Player player = getServer().getPlayer(args[0]);
 
