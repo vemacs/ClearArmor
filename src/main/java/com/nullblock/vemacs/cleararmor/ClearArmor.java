@@ -26,6 +26,7 @@ public class ClearArmor extends JavaPlugin
 					player.getInventory().setArmorContents(new ItemStack[4]); // setting null is a terrible idea
 					player.updateInventory(); // force inventory update to client
 				}			
+				this.getLogger().info(ChatColor.stripColor(bad + "Cleared the armor inventory of " + player.getDisplayName()));
 				sender.sendMessage(bad + "Cleared the armor inventory of " + player.getDisplayName());
 				return true;
 			}
