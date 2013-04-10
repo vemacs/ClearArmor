@@ -17,7 +17,7 @@ public class ClearArmor extends JavaPlugin
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) 
 	{
 		if(command.getName().equalsIgnoreCase("cleararmor")){
-			if(!sender.hasPermission("cleararmor.use")
+			if(!sender.hasPermission("cleararmor.use"))
 			{
 				sender.sendMessage(bad + "You don't have permission to use this.");
 				return true;
